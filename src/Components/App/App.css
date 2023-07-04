@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient( hsl(234, 17%, 12%), rgb(47, 36, 57));
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-stars {
+    height: 101vh;
+    /* object-fit: scale-down; */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.bg-hills {
+    height: 25vh;
+    /* object-fit: fill; */
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.content-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+@media screen and (min-width: 600px) {
+    .bg-hills {
+        height: auto;
+        width: 100vw;
+    }
+}
