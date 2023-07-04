@@ -19,7 +19,7 @@ const Timer = () => {
                 let diff = target - now
                 if (diff < 0) {
                     const new_target = new Date(now.getFullYear() + 1, 2, 20, 0, 0, 0)
-                    diff = target - now
+                    diff = new_target - now
                 }
                 setCountdown((new Date(diff)))
             }, 1000
