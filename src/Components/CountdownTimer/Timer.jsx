@@ -15,8 +15,12 @@ const Timer = () => {
             () => {
                 setLoop(prev => prev + 1)
                 const now = new Date()
-                const target = new Date(2023,7,6,0,0,0)
-                const diff = target - now
+                const target = new Date(now.getFullYear(), 2, 20, 0, 0, 0)
+                let diff = target - now
+                if (diff < 0) {
+                    const new_target = new Date(now.getFullYear() + 1, 2, 20, 0, 0, 0)
+                    diff = target - now
+                }
                 setCountdown((new Date(diff)))
             }, 1000
         )
@@ -26,7 +30,7 @@ const Timer = () => {
     }, [loop])
 
     useEffect(() => {
-        
+
     }, [])
 
     return (
@@ -39,9 +43,9 @@ const Timer = () => {
                 <div className="countdown-area"><ContentArea data={countdown ? countdown.getSeconds() : 0} label={"seconds"} /></div>
             </div>
             <div className="socials">
-                <div className="social-btn"><a href='https://github.com/RahulGoel2002'><GitHubIcon    style={{fontSize: "2rem"}} /></a></div>
-                <div className="social-btn"><a href='https://www.linkedin.com/in/rahul-goel-815399229/'><LinkedInIcon  style={{fontSize: "2rem"}} /></a></div>
-                <div className="social-btn"><a href='https://www.instagram.com/rgoel1729/'><InstagramIcon style={{fontSize: "2rem"}} /></a></div>
+                <div className="social-btn"><a href='https://github.com/RahulGoel2002'><GitHubIcon style={{ fontSize: "2rem" }} /></a></div>
+                <div className="social-btn"><a href='https://www.linkedin.com/in/rahul-goel-815399229/'><LinkedInIcon style={{ fontSize: "2rem" }} /></a></div>
+                <div className="social-btn"><a href='https://www.instagram.com/rgoel1729/'><InstagramIcon style={{ fontSize: "2rem" }} /></a></div>
             </div>
         </div>
     );
